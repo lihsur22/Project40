@@ -35,15 +35,15 @@ function setup() {
 function draw() {
   background(back_img);
   
-   if (playerCount === 2) {
-     game.update(1);
-   }
-   if (gameState === 1) {
-     clear(); 
-     game.play();
-   }
-   if (gameState === 2) {
-    
-     game.end();
-   }
+  if (playerCount === 2 && gameState !== 2) {
+    game.update(1);
+  }
+  if (gameState === 1) {
+    clear(); 
+    game.play();
+  }
+  if (gameState === 2) {
+    clear();  
+    game.end();
+  }
 }
